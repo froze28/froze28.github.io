@@ -59,4 +59,4 @@ Gameplay Programmer Intern, Game Institute India: VR gameplay and interaction sy
 
 Get in touch
 📧 shubhammain55@gmail.com
-💼 LinkedIn [https://www.linkedin.com/in/shubham-main]
+💼 LinkedIn https://www.linkedin.com/in/shubham-main
