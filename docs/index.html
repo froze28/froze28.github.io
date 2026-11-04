@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shubham Main – Gameplay Programmer</title>
+<meta name="description" content="Portfolio of Shubham Main, a gameplay programmer working in Unreal Engine and C++.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<style>
+:root{--bg:#eceff3;--panel:#fff;--ink:#14213d;--mute:#4b5873;--line:#c9d1de;--accent:#2f4bff;--on-accent:#fff;--screen:#14213d;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1626;--panel:#16213a;--ink:#eaf0fa;--mute:#a3b0c8;--line:#2b3a5a;--accent:#7e93ff;--on-accent:#0e1626;--screen:#0a1020}}
+:root[data-theme="dark"]{--bg:#0e1626;--panel:#16213a;--ink:#eaf0fa;--mute:#a3b0c8;--line:#2b3a5a;--accent:#7e93ff;--on-accent:#0e1626;--screen:#0a1020}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "IBM Plex Sans",system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;gap:16px;padding:22px 0;font-weight:500}
+nav .links{display:flex;gap:22px;flex-wrap:wrap}
+nav a{text-decoration:none}nav a:hover{text-decoration:underline}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.05;margin:0}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;padding:48px 0 64px}
+h1{font-weight:800;font-size:clamp(3.4rem,9vw,7.2rem);letter-spacing:-.03em}
+.hero p{font-size:1.15rem;color:var(--mute);margin:0 0 24px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;border:2px solid var(--ink);text-decoration:none;font-weight:500}
+.btn.main{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin-bottom:28px}
+section{padding:40px 0}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);column-gap:32px;border-top:2px solid var(--ink)}
+.skills div{padding:16px 0;border-bottom:1px solid var(--line)}
+.skills b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:1.15rem}
+.skills span{color:var(--mute);font-size:.95rem}
+.project{padding:48px 0;border-top:2px solid var(--ink)}
+.project h3{font-size:2.1rem;font-weight:800}
+.tag{color:var(--mute);margin:8px 0 18px;font-size:.95rem}
+.project p{margin:0 0 14px}
+.project ul{padding-left:1.1em;margin:0}
+.project li{margin:6px 0}
+.project h4{font-family:"Bricolage Grotesque",sans-serif;font-size:1.05rem;margin:0 0 8px}
+.repo{display:inline-block;margin-top:14px;font-weight:500}
+.project.solo{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center}
+.project.solo .text .points{margin-top:18px}
+.cols{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;margin-bottom:32px}
+.vgrid{display:grid;gap:20px}
+.vgrid.n2,.vgrid.n4{grid-template-columns:repeat(2,1fr)}
+.vgrid.n3{grid-template-columns:repeat(3,1fr)}
+.slot{position:relative;aspect-ratio:16/9;border-radius:10px;background:var(--screen);overflow:hidden;border:1px solid var(--line);color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px}
+.slot iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.slot a.yt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-decoration:none}
+.play{width:56px;height:56px;border-radius:50%;background:var(--accent);display:grid;place-items:center;margin:0 auto 10px}
+.play::after{content:"";border-left:16px solid var(--on-accent);border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+.slot small{display:block;opacity:.8;font-size:.85rem}
+.cap{color:var(--mute);font-size:.9rem;margin-top:6px}
+.exp{display:grid;grid-template-columns:1fr 1fr;gap:32px;border-top:2px solid var(--ink);padding-top:20px}
+.exp h3{font-size:1.35rem}
+.exp p{margin:6px 0 0;color:var(--mute)}
+footer{padding:48px 0 64px;border-top:2px solid var(--ink);margin-top:32px}
+.contact{display:flex;gap:32px;flex-wrap:wrap;font-weight:500}
+@media (max-width:900px){
+ .hero,.project.solo,.cols,.exp{grid-template-columns:1fr}
+ .skills{grid-template-columns:1fr 1fr}
+ .vgrid.n3{grid-template-columns:1fr 1fr}
+ .vgrid.n3>div:first-child{grid-column:1/-1}
+}
+@media (max-width:600px){.skills,.vgrid.n2,.vgrid.n3,.vgrid.n4{grid-template-columns:1fr}.vgrid.n3>div:first-child{grid-column:auto}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><b>Shubham Main</b><div class="links"><a href="#work">Projects</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div></nav>
+
+<header class="hero">
+<h1>Shubham<br>Main</h1>
+<div>
+<p>I’m a gameplay programmer building systems in Unreal Engine and C++. I work on Mukti, a PC and PlayStation 5 title at Underdogs Studio, and make multiplayer, AI and VR projects in my own time.</p>
+<div class="btns"><a class="btn main" href="#work">See my projects</a><a class="btn" href="#contact">Get in touch</a></div>
+</div>
+</header>
+
+<section id="skills">
+<h2>What I build</h2>
+<div class="skills">
+<div><b>Gameplay systems</b><span>Objectives, progression, puzzles, interaction, gameplay UI</span></div>
+<div><b>Multiplayer</b><span>Sessions, lobbies, server-authoritative logic, replication, seamless travel</span></div>
+<div><b>AI</b><span>Sound-responsive enemies, stealth, NPC coordination, bosses</span></div>
+<div><b>VR</b><span>Gameplay and interaction systems for virtual reality</span></div>
+<div><b>Tools and debugging</b><span>In-game developer tools, PS5 builds, platform-specific issues</span></div>
+<div><b>Tech</b><span>C++, Blueprints, C#, Unreal Engine, Unity, Rider, Visual Studio, Perforce</span></div>
+</div>
+</section>
+
+<section id="work">
+<h2>Projects</h2>
+<div id="projects"></div>
+</section>
+
+<section id="experience">
+<h2>Experience</h2>
+<div class="exp">
+<div><h3>Gameplay Programmer, Underdogs Studio</h3><p>Working on Mukti (PC and PS5). I build gameplay systems in Unreal Engine and C++, including objectives, puzzles and cutscenes, and debug platform-specific issues.</p></div>
+<div><h3>Gameplay Programmer Intern, Game Institute India</h3><p>VR gameplay and interaction systems, including customer NPC AI that reacts to player-set prices in the VR Shop Simulator project.</p></div>
+</div>
+</section>
+</div>
+
+<footer id="contact"><div class="wrap">
+<h2>Get in touch</h2>
+<div class="contact">
+<a href="mailto:shubhammain55@gmail.com">shubhammain55@gmail.com</a>
+<a href="https://www.linkedin.com/in/shubham-main">linkedin.com/in/shubham-main</a>
+</div>
+</div></footer>
+
+<script>
+/* ===== EDIT HERE =====
+   Each video takes a YouTube or Vimeo link (or ID). Leave "" to keep the placeholder.
+   Add a GitHub link in `repo` to show a repository link. */
+const PROJECTS = [
+ {title:"Mukti", tag:"Unreal Engine 5 · C++ and Blueprints · PC and PS5 · Underdogs Studio",
+  desc:[
+   "Mukti is a first-person narrative and puzzle game for PC and PlayStation 5, with cooperative multiplayer components, built in Unreal Engine 5 at Underdogs Studio.",
+   "I work on the gameplay layer in C++ and Blueprints: objective and progression systems, puzzle mechanics, interaction systems, in-game cutscenes and gameplay UI.",
+   "I also handle platform work, including debugging crashes in PS5 builds and using DualSense features such as adaptive trigger feedback and the touchpad inside puzzles."],
+  points:["Objective and progression systems with a diary UI","Puzzles, including a pattern lock driven by the DualSense touchpad","A hand-pump cart with adaptive trigger feedback","First-person rendering that stops arms clipping through walls","In-game cutscenes","PS5 build debugging"],
+  repo:"", videos:[{url:"https://www.youtube.com/watch?v=8i2njoJV44Q", caption:"Live-action reveal trailer"}]},
+ {title:"VR Game", tag:"Virtual reality · Game Institute India internship",
+  desc:[
+   "I built this during my internship at Game Institute India, working on gameplay and interaction systems for virtual reality.",
+   "On the VR Shop Simulator project I made the customer NPC AI, so customer behaviour changes with the prices the player sets."],
+  points:["VR gameplay and interaction systems","Customer NPC AI that reacts to player-set prices"],
+  repo:"", videos:[{url:"", caption:"VR gameplay"}]},
+ {title:"Co-op Train Horror Game", tag:"Unreal Engine 5 · C++ · in progress",
+  desc:[
+   "A cooperative multiplayer horror game set on a train, built in Unreal Engine 5 with C++.",
+   "I own the multiplayer foundations. A C++ session subsystem handles creating, finding and joining sessions and the lobby flow, and gameplay logic is server-authoritative so every player sees the same state.",
+   "Inventory is replicated, and players move from the lobby level into the gameplay level with seamless travel. The co-op gameplay includes a generator repair system where the team manages fuel and hunts for missing components."],
+  points:["C++ session subsystem for lobbies","Server-authoritative gameplay logic","Inventory replication","Seamless travel between levels","Cooperative generator repair"],
+  repo:"", videos:[{url:"", caption:"Co-op demo"}]},
+ {title:"Silent Cipher", tag:"Unreal Engine 5 · C++",
+  desc:[
+   "Silent Cipher is a stealth game made in Unreal Engine 5. The player must collect five pendrives hidden across a small town guarded by military soldiers, avoid detection and escape.",
+   "Strategy and stealth are key: the enemy AI watches and reacts, so the player has to plan routes and use tools like the whistle to pull soldiers away from their objectives.",
+   "I built the enemy AI, the player interaction mechanics and the supporting UI."],
+  points:["Enemy AI that supports stealth play","Whistle mechanic that attracts enemies","Player interaction mechanics and UI"],
+  repo:"", videos:[
+   {url:"https://player.vimeo.com/video/1012735808", caption:"Stealth gameplay"},
+   {url:"https://www.youtube.com/embed/HA85grcX0AY", caption:"More gameplay"},
+   {url:"https://www.youtube.com/embed/W3h_Mxqgavg", caption:"More gameplay"}]},
+ {title:"Enemy AI using ALS", tag:"Unreal Engine 5 · Advanced Locomotion System",
+  desc:[
+   "In this AI project, built with Unreal Engine 5 and ALS, enemies react to sounds the player generates and go to investigate the source.",
+   "A custom NPC Manager handles decision-making and sends the closest enemy to check out a disturbance, such as a stone thrown near a group of enemies.",
+   "When the player is spotted, that enemy alerts nearby AI and starts a chase. The result is dynamic, lifelike behaviour where enemies respond to the player and cooperate in pursuit."],
+  points:["Enemies react to player-made sounds","NPC Manager picks who investigates","Detected enemies alert their companions","Pursuit behaviour that creates chase sequences"],
+  repo:"", videos:[
+   {url:"https://player.vimeo.com/video/1012746750", caption:"Hide in bushes from enemy AI"},
+   {url:"https://player.vimeo.com/video/1012746713", caption:"Alert nearby enemies when the player is spotted"},
+   {url:"https://player.vimeo.com/video/1012746896", caption:"Takedown an enemy, and AI reacts to the dead body"},
+   {url:"https://player.vimeo.com/video/1012746822", caption:"NPC Manager for strategic AI decisions"}]},
+ {title:"Rogue Princess", tag:"Unreal Engine 5 · 2D side-scroller",
+  desc:[
+   "Rogue Princess was my first Unreal Engine 5 project. I designed and built a challenging boss battle with two phases.",
+   "In phase one the boss teleports randomly across the arena whenever it is damaged. In phase two it turns aggressive and leaps at the player.",
+   "I also added a mechanic where players take burn damage if they stay near the boss for more than one second, which pushes them to keep moving and think about positioning."],
+  points:["Movement, jumping, sliding and attack mechanics","Two-phase boss with teleports and leap attacks","Proximity-based burn damage"],
+  repo:"", videos:[
+   {url:"https://www.youtube.com/embed/94maqFWA2NU", caption:"Boss fight"},
+   {url:"https://www.youtube.com/embed/lytLGe57ZW0", caption:"Gameplay"}]},
+ {title:"FPS Prototype", tag:"Unreal Engine 5 · work in progress",
+  desc:[
+   "A first-person shooter prototype built in Unreal Engine 5, focused on a weapon system that feels good to use.",
+   "It includes dynamic shooting mechanics, weapon swapping, reloading, realistic recoil and weapon bobbing for a more immersive feel."],
+  points:["Shooting, weapon swapping and reloading","Recoil and weapon bobbing"],
+  repo:"", videos:[
+   {url:"https://www.youtube.com/embed/OfRWbXQU96s", caption:"Weapon system"},
+   {url:"https://www.youtube.com/embed/-x0pSejUIDY", caption:"More footage"},
+   {url:"https://www.youtube.com/embed/41K6wn71y-8", caption:"More footage"}]}
+];
+/* ===== END EDIT ===== */
+
+/* YouTube refuses to play (Error 153) on pages that don't send a normal web address as referrer,
+   which is the case in some previews. Set to true on a custom domain; GitHub Pages works automatically. */
+const YT_EMBED=/\.github\.io$/.test(location.hostname)||location.hostname==='localhost';
+function parse(v){
+  v=(v||"").trim();
+  let m=v.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+  if(m) return {t:"v",id:m[1]};
+  m=v.match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/)||v.match(/^([\w-]{11})$/);
+  return m?{t:"y",id:m[1]}:null;
+}
+function el(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text)e.textContent=text;return e;}
+/* Videos start muted and autoplay as they scroll into view (browsers only allow muted autoplay). */
+const io="IntersectionObserver" in window?new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){io.unobserve(e.target);e.target._load();}
+}),{rootMargin:"150px"}):null;
+
+function videoBlock(v){
+  const vid=parse(v.url), wrap=el("div"), slot=el("div","slot");
+  if(vid&&vid.t==="y"&&!YT_EMBED){
+    slot.innerHTML='<a class="yt" href="https://www.youtube.com/watch?v='+vid.id+'" target="_blank" rel="noopener" aria-label="Watch '+v.caption+' on YouTube"><div class="play"></div>Watch on YouTube<small>Opens in a new tab</small></a>';
+  } else if(vid){
+    slot.innerHTML='<div><div class="play"></div><small>Loading video</small></div>';
+    slot._load=()=>{
+      const f=document.createElement("iframe");
+      f.src=vid.t==="y"
+        ?"https://www.youtube.com/embed/"+vid.id+"?autoplay=1&mute=1&loop=1&playlist="+vid.id+"&rel=0&playsinline=1"
+        :"https://player.vimeo.com/video/"+vid.id+"?autoplay=1&muted=1&loop=1";
+      f.title=v.caption;
+      f.referrerPolicy="strict-origin-when-cross-origin";
+      f.allow="autoplay; encrypted-media; picture-in-picture; fullscreen";
+      f.allowFullscreen=true;
+      slot.innerHTML="";slot.append(f);
+    };
+    io?io.observe(slot):slot._load();
+  } else {
+    slot.innerHTML='<div><div class="play"></div>YouTube video coming soon<small>Add the link in the PROJECTS list</small></div>';
+  }
+  wrap.append(slot,el("div","cap",v.caption));
+  if(vid){
+    const a=el("a","cap",vid.t==="y"?"Watch on YouTube":"Watch on Vimeo");
+    a.href=vid.t==="y"?"https://www.youtube.com/watch?v="+vid.id:"https://vimeo.com/"+vid.id;
+    a.target="_blank";a.rel="noopener";a.style.display="block";wrap.append(a);
+  }
+  return wrap;
+}
+
+const root=document.getElementById("projects");
+PROJECTS.forEach(p=>{
+  const solo=p.videos.length===1;
+  const art=el("article","project"+(solo?" solo":""));
+  const head=el("div"); head.append(el("h3",null,p.title),el("div","tag",p.tag));
+  const desc=el("div"); p.desc.forEach(t=>desc.append(el("p",null,t)));
+  const pts=el("div","points"); pts.append(el("h4",null,"What I built"));
+  const ul=el("ul"); p.points.forEach(t=>ul.append(el("li",null,t))); pts.append(ul);
+  if(p.repo){const a=el("a","repo","View repository");a.href=p.repo;pts.append(a);}
+  if(solo){
+    const text=el("div","text"); text.append(head,desc,pts);
+    art.append(text,videoBlock(p.videos[0]));
+  } else {
+    const cols=el("div","cols"); cols.append(desc,pts);
+    const grid=el("div","vgrid n"+Math.min(p.videos.length,4));
+    p.videos.forEach(v=>grid.append(videoBlock(v)));
+    art.append(head,cols,grid);
+  }
+  root.append(art);
+});
+</script>
+</body>
+</html>
