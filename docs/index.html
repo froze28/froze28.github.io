@@ -217,7 +217,7 @@ function videoBlock(v){
     };
     io?io.observe(slot):slot._load();
   } else {
-    slot.innerHTML='<div><div class="play"></div>YouTube video coming soon</div>';
+    slot.innerHTML='<div><div class="play"></div>Video not available yet</div>';
   }
   wrap.append(slot,el("div","cap",v.caption));
   if(vid){
